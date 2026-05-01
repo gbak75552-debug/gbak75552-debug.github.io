@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Meu Controle Financeiro</title>
+<title>Controle Financeiro Online Grátis</title>
 
 <style>
 body {
@@ -22,7 +22,7 @@ header {
 
 .container {
     padding: 20px;
-    max-width: 600px;
+    max-width: 700px;
     margin: auto;
 }
 
@@ -66,7 +66,7 @@ button:hover {
 
 <body>
 
-<header>💰 Meu Controle Financeiro</header>
+<header>💰 Controle Financeiro Online</header>
 
 <div class="container">
 
@@ -93,16 +93,34 @@ button:hover {
         <div id="list"></div>
     </div>
 
-    <!-- Área de anúncio -->
+    <!-- CONTEÚDO EXTRA (IMPORTANTE PRA APROVAÇÃO) -->
     <div class="card">
-        <h3>Anúncio</h3>
+        <h3>Sobre o Sistema</h3>
+        <p>
+        Este site é uma ferramenta gratuita de controle financeiro pessoal.
+        Permite registrar receitas e despesas, acompanhar saldo em tempo real
+        e ajudar na organização financeira diária.
+        </p>
+    </div>
 
-        <!-- COLOQUE SEU SCRIPT AQUI -->
-        <!-- Exemplo -->
-        <!--
-        <script src="SEU_SCRIPT_AQUI.js"></script>
-        -->
+    <div class="card">
+        <h3>Como Usar</h3>
+        <p>
+        Adicione suas entradas e saídas financeiras para acompanhar seu saldo.
+        Todos os dados ficam armazenados localmente no seu navegador.
+        </p>
+    </div>
 
+    <div class="card">
+        <h3>Política de Privacidade</h3>
+        <p>
+        Este site pode utilizar cookies para melhorar a experiência do usuário
+        e exibir anúncios. Nenhuma informação pessoal sensível é coletada.
+        </p>
+    </div>
+
+    <div class="card">
+        <h3>Publicidade</h3>
     </div>
 
 </div>
@@ -115,10 +133,9 @@ function updateUI() {
     let balance = document.getElementById("balance");
 
     list.innerHTML = "";
-
     let total = 0;
 
-    transactions.forEach((t, index) => {
+    transactions.forEach((t) => {
         let div = document.createElement("div");
         div.classList.add("list-item");
 
@@ -130,12 +147,10 @@ function updateUI() {
         `;
 
         list.appendChild(div);
-
         total += t.type === "income" ? t.value : -t.value;
     });
 
     balance.innerText = "R$ " + total.toFixed(2);
-
     localStorage.setItem("transactions", JSON.stringify(transactions));
 }
 
@@ -158,6 +173,18 @@ function addTransaction() {
 }
 
 updateUI();
+</script>
+
+<!-- SCRIPT DE ANÚNCIO -->
+<script>
+(function(s){
+  s.dataset.zone='10950932',
+  s.src='https://nap5k.com/tag.min.js'
+})
+([document.documentElement, document.body]
+.filter(Boolean)
+.pop()
+.appendChild(document.createElement('script')))
 </script>
 
 </body>
